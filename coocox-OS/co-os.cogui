@@ -25,7 +25,7 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="D:/Work/git/stm32_examples/coocox-OS/main.c" title="main.c" tooltip="D:/Work/git/stm32_examples/coocox-OS/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/co-os/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="1" selectionOffset="1772" selectionTopPixel="1010"/>
+<editorState selectionHorizontalPixel="0" selectionLength="1" selectionOffset="1772" selectionTopPixel="1020"/>
 </editor>
 <editor id="org.coocox.builder.ui.editors.ConfigEditor" name="" partName="Configuration" title="Configuration" tooltip="" workbook="DefaultEditorWorkbook">
 <input factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory">&#x0A;<org.coocox.builder.ui.editors.ConfigEditor horizontalPosition="0" subTagIndex="1" verticalPosition="0"/>

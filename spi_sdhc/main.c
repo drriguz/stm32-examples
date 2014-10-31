@@ -15,7 +15,7 @@
 #define NULL 0
 
 FATFS       fatfs;
-FIL         fsrc;
+FIL         fsrc, fdst;
 BYTE        buffer[512];
 
 void Led_GPIO_Configuration(void);
@@ -33,11 +33,17 @@ int main(void)
 
 	DRESULT res = disk_initialize(0);
 	res = f_mount(&fatfs, "0", 0);
-	res = f_open(&fsrc, "0:/hello.txt", FA_READ|FA_WRITE|FA_OPEN_EXISTING);
+	res = f_open(&fsrc, "0:/hello.txt",  FA_READ|FA_WRITE|FA_OPEN_EXISTING);
 	UINT cnt = 0;
 	res = f_read(&fsrc, buffer, 10, &cnt);
-	res = f_lseek(&fsrc, cnt);
+	res = f_lseek(&fsrc, 1);
 	cnt = f_puts("\r\nI Love Stm32^_^\r\n", &fsrc);
+	f_sync(&fsrc);
+
+	res = f_open(&fdst, "0:/new.txt", FA_CREATE_NEW|FA_WRITE);
+	BYTE textFileBuffer[] = "hello world\r\n";
+	UINT bw = 0;
+	res = f_write(&fdst, textFileBuffer, sizeof(textFileBuffer), &bw);
 	f_mount(NULL, 0, 0);
 	while(1)
 	{
